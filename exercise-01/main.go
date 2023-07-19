@@ -13,7 +13,7 @@ type Country struct {
 }
 
 func main() {
-	var countries = ReadJson()
+	var countries = LoadCountries()
 
 	args := os.Args[1:]
 	var length = len(args)

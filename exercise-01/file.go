@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func ReadJson() []Country {
+func LoadCountries() []Country {
 	fileContent, err := os.Open("countries.json")
 
 	if err != nil {

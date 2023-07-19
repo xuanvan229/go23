@@ -28,7 +28,7 @@ func TestCheckEasternNameOrder(t *testing.T) {
 		{"KR", true},
 		{"wrong", false},
 	}
-	var countries = ReadJson()
+	var countries = LoadCountries()
 
 	for _, test := range tests {
 		if output := CheckEasternNameOrder(countries, test.CountryCode); output != test.Expected {
@@ -39,7 +39,7 @@ func TestCheckEasternNameOrder(t *testing.T) {
 }
 
 func TestFormatName(t *testing.T) {
-	var countries = ReadJson()
+	var countries = LoadCountries()
 	var test = []SFormatName{
 		{[]string{"Xuan", "Van", "Hong"}, "VN", "Van Hong Xuan"},
 		{[]string{"Xuan", "Van", "Hong"}, "US", "Xuan Hong Van"},
@@ -57,7 +57,7 @@ func TestFormatName(t *testing.T) {
 }
 
 func TestCheckIsValidCountry(t *testing.T) {
-	var countries = ReadJson()
+	var countries = LoadCountries()
 	var test = []SCheckIsValidCountry{
 		{"VN", true},
 		{"US", true},
