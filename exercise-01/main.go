@@ -26,7 +26,7 @@ func main() {
 	var countryCode = args[length-1]
 	countryCode = strings.ToUpper(countryCode)
 
-	var isValidCountry, _ = CheckIsValidCountry(countries, countryCode)
+	var isValidCountry, _ = IsValidCountry(countries, countryCode)
 
 	if !isValidCountry {
 		fmt.Println("Invalid country code")
@@ -54,7 +54,7 @@ func FormatName(array []string, countryCode string, countries []Country) (string
 		middleName += value + " "
 	}
 
-	var isEasternNameOrder = CheckEasternNameOrder(countries, countryCode)
+	var isEasternNameOrder = IsEasternNameOrder(countries, countryCode)
 	var name string
 
 	if isEasternNameOrder {
@@ -67,7 +67,7 @@ func FormatName(array []string, countryCode string, countries []Country) (string
 
 }
 
-func CheckIsValidCountry(countries []Country, countryCode string) (bool, Country) {
+func IsValidCountry(countries []Country, countryCode string) (bool, Country) {
 	for _, value := range countries {
 		if value.Code == countryCode {
 			return true, value
@@ -77,10 +77,10 @@ func CheckIsValidCountry(countries []Country, countryCode string) (bool, Country
 	return false, Country{}
 }
 
-func CheckEasternNameOrder(countries []Country, countryCode string) bool {
-	var EasternNameOrder = []string{"VN", "CN", "JP", "KR", "KP", "SG", "HU"}
+func IsEasternNameOrder(countries []Country, countryCode string) bool {
+	var EasternNameOrder = []string{"VN", "CN", "JP", "KR", "KP", "SG", "HU", "TW"}
 
-	var _, country = CheckIsValidCountry(countries, countryCode)
+	var _, country = IsValidCountry(countries, countryCode)
 
 	for _, value := range EasternNameOrder {
 		if value == country.Code {

@@ -31,7 +31,7 @@ func TestCheckEasternNameOrder(t *testing.T) {
 	var countries = LoadCountries()
 
 	for _, test := range tests {
-		if output := CheckEasternNameOrder(countries, test.CountryCode); output != test.Expected {
+		if output := IsEasternNameOrder(countries, test.CountryCode); output != test.Expected {
 			t.Errorf("Output %t not equal to expected %t", output, test.Expected)
 		}
 	}
@@ -69,7 +69,7 @@ func TestCheckIsValidCountry(t *testing.T) {
 	}
 
 	for _, value := range test {
-		if output, _ := CheckIsValidCountry(countries, value.countryCode); output != value.expected {
+		if output, _ := IsValidCountry(countries, value.countryCode); output != value.expected {
 			t.Errorf("Output %t not equal to expected %t with country %s", output, value.expected, value.countryCode)
 		}
 	}
