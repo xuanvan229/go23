@@ -9,6 +9,7 @@ func TestParseInt(t *testing.T) {
 	}{
 		{[]string{"1", "2", "3"}, []int{1, 2, 3}},
 		{[]string{"1", "2", "33", "4"}, []int{1, 2, 33, 4}},
+		{[]string{"1", "2", "-33", "4"}, []int{1, 2, -33, 4}},
 	}
 
 	var failTests = []struct {
@@ -38,7 +39,7 @@ func TestParseFloat(t *testing.T) {
 		expected []float64
 	}{
 		{[]string{"1.1", "2.2", "3.3"}, []float64{1.1, 2.2, 3.3}},
-		{[]string{"10", "20", "30.33"}, []float64{10, 20, 30.33}},
+		{[]string{"10", "-20", "30.33"}, []float64{10, -20, 30.33}},
 	}
 
 	var failTests = []struct {
