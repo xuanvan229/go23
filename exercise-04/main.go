@@ -7,7 +7,7 @@ import (
 
 func main() {
 	word := "ab123uii1j01mmh024zxc01bbb900qq000001"
-	count := numbDifferentInteriors(word)
+	count := NumbDifferentInteriors(word)
 	fmt.Printf("count: %d\n", count)
 }
 
@@ -21,7 +21,7 @@ func countDifferentNumbers(arr []int) int {
 	return len(numCounts)
 }
 
-func numbDifferentInteriors(words string) int {
+func NumbDifferentInteriors(words string) int {
 	numbers := make([]int, 0)
 	currentNumberString := ""
 	for i := 0; i < len(words); i++ {
