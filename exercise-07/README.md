@@ -8,4 +8,4 @@ API:
 
 Get product:
 
-GET: [104.248.126.61:8080/products?page=1](104.248.126.61:8080/products?page=1)
+GET: [104.248.126.61:8080/products?page=1](http://104.248.126.61:8080/products?page=1)
